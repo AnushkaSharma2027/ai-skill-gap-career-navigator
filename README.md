@@ -1,4 +1,3 @@
-MD
 🎯 AI Skill-Gap Career Navigator
 
 Analyzes your current skills against a target job role using the Gemini API, and generates a personalized, week-by-week learning roadmap.
@@ -6,8 +5,8 @@ Analyzes your current skills against a target job role using the Gemini API, and
 Setup (VS Code)
 1. Create project folder & open in VS Code
 bash
-mkdir ai-skill-navigator
-cd ai-skill-navigator
+mkdir ai-skill-gap-career-navigator
+cd ai-skill-gap-career-navigator
 code .
 
 Copy all the project files into this folder.
@@ -16,16 +15,22 @@ Copy all the project files into this folder.
 bash
 python -m venv venv
 
-# Activate it:
-# Windows:
+Activate it:
+
+Windows:
+
+bash
 venv\Scripts\activate
-# Mac/Linux:
+
+Mac/Linux:
+
+bash
 source venv/bin/activate
 3. Install dependencies
 bash
 pip install -r requirements.txt
 4. Get a free Gemini API key
-Go to https://aistudio.google.com/app/apikey
+Go to aistudio.google.com/app/apikey
 Sign in with your Google account
 Click "Create API Key" → copy it
 5. Set up your API key
@@ -46,22 +51,19 @@ Pick roadmap length (use 1 week if your interview is very soon)
 Click "Analyze Skill Gap"
 Review matched skills, missing skills, and your roadmap
 Download the roadmap as CSV if you want
-Push to GitHub
-bash
-git init
-git add .
-git commit -m "Initial commit: AI Skill-Gap Career Navigator"
-git branch -M main
-git remote add origin https://github.com/<your-username>/ai-skill-navigator.git
-git push -u origin main
-
-Important: add a .gitignore with .env and venv/ in it so you never push your API key.
-
 Project Structure
-ai-skill-navigator/
+ai-skill-gap-career-navigator/
 ├── app.py              # Streamlit UI — main entry point
 ├── gemini_helper.py     # Gemini API calls + prompt engineering
 ├── resume_parser.py     # PDF/DOCX/TXT text extraction
 ├── requirements.txt
 ├── .env.example
+├── .gitignore
 └── README.md
+Tech Stack
+Frontend/UI: Streamlit
+Backend logic: Python
+AI: Google Gemini API
+Resume parsing: PyPDF2, python-docx
+
+Note: .env (which holds your real API key) is excluded via .gitignore and is never pushed to GitHub.
